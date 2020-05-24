@@ -1603,7 +1603,9 @@ class ML4AfrikaDriveByMap extends Command
       "emr_measure_range_aliases" => $emr_measure_range_aliases,
     ];
 
-    $response = $client->request('POST', env('BLIS_MAP_TESTTYPE_STORE_URL', 'http://blis3.local/api/maptesttypebynames'), [
+    $response = $client->request('POST',
+      env('BLIS_MAP_TESTTYPE_STORE_URL',
+        'http://blis3.local/api/maptesttypebynames'), [
       'headers' => [
         'Accept' => 'application/json',
         'Content-type' => 'application/json',

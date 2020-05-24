@@ -1505,12 +1505,12 @@ class ML4AfrikaSeed extends Command
     foreach ($testTypes as $testType) {
 
       if ($testType['blis_alias'] != '') {
-
-        $testTypeId = DB::connection('mysqlml4afrika')->table('test_types')->insertGetId([
-          'data_element_id' => $testType['data_element_id'],
-          'blis_alias' => $testType['blis_alias'],
-          'name' => $testType['name'],
-        ]);
+        $testTypeId = DB::connection('mysqlml4afrika')->table('test_types')
+          ->insertGetId([
+            'data_element_id' => $testType['data_element_id'],
+            'blis_alias' => $testType['blis_alias'],
+            'name' => $testType['name'],
+          ]);
         echo $testType['data_element_id']."\n";
 
         foreach ($testType['result'] as $result) {

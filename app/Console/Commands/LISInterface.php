@@ -89,6 +89,9 @@ php artisan lis:tokens
 
   public function testRequest()
   {
+    echo "\n";
+    echo "util this has value\n";
+    echo "\n";
     $accessToken = \App\ThirdPartyApp::where('email','system@his.prod')
       ->first()->access_token;
 dd(DB::connection('mysqlblis')->table('emr_test_type_aliases')->get());
